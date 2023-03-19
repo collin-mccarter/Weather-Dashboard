@@ -8,7 +8,7 @@ var cityHist = [];
 
 $('.search').on("click", function (event) {
     event.preventDefault();
-    city = $(this).parent('.textVal').val().trim(); // ERROR POPS UP HERE
+    city = $(this).parent('.textVal').val().trim(); // ERROR HERE
     if (city === ""){
         return;
     };
