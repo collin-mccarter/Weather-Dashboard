@@ -33,7 +33,7 @@ function getHistory() {
 
 		rowEl.addClass('row histBtnRow');
 		btnEl.addClass('btn btn-outline-secondary histBtn');
-		btnEl.attr('type', 'button');
+		btnEl.attr('type', 'submit');
 
 		constHistEl.prepend(rowEl);
 		rowEl.append(btnEl);
@@ -43,7 +43,8 @@ function getHistory() {
 
     $(".histBtn").on("click", function (event) { // allows older cities to be clicked and have data on the displayed
         event.preventDefault();
-        city = $this.text();
+        // console.log(event);
+        city = event.target.innerText;
         fiveForecastEl.empty();
         getWeatherToday();
     })
