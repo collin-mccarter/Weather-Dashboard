@@ -1,6 +1,5 @@
 var key = 'efb078ba60c7b8c3d3a1c4131546c390';
-var city = "Dallas";
-
+// var city = "Dallas";
 var date = dayjs().format('MM/DD/YYYY');
 var dateTime = dayjs().format ('MM/DD/YYYY HH:mm:ss')
 
@@ -9,9 +8,10 @@ var cityHist = [];
 // search for city name on click
 $('.search').on("click", function (event) {
     event.preventDefault(); // prevents refresh
-    city = $(this).parent('.textVal'); // ERROR HERE
-    // var cityName = document.getElementById("cityName");
-    // city = cityName
+    // city = $(this).parent('.textVal'); // ERROR HERE
+    // var city = document.getElementById("cityName");
+    let city = document.getElementById("cityName").value
+
     if (city === ""){ // makes sure there is something in city name
         return;
     };
@@ -37,8 +37,8 @@ function getHistory() {
 
 		constHistEl.prepend(rowEl);
 		rowEl.append(btnEl);
-    } if (!city) { // stops if no more cities are available
-        return;
+    // } if (!city) { // stops if no more cities are available
+    //     return;
     }
 
     $(".histBtn").on("click", function (event) { // allows older cities to be clicked and have data on the displayed
@@ -159,4 +159,5 @@ function initLoad() { // on initial load
     getWeatherToday(); // gets weather today
 };
 
-initLoad(); // executes initial load
+// executes initial load
+initLoad(); 
